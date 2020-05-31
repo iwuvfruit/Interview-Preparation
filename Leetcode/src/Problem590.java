@@ -24,6 +24,20 @@ public class Problem590 {
 		
 	}
 	
+	
+	public List<Integer> postorderWithRecursion(Node root){
+		List<Integer> list = new ArrayList<>();
+		if(root == null) {
+			return list;
+		}
+		for(Node child: root.children) {
+			postorderWithRecursion(child);
+		}
+		list.add(root.val);
+		return list;
+	}
+	
+	
 	 public List<Integer> postorder(Node root) {
 	        List<Integer> list = new ArrayList<Integer>();
 	        if(root == null){

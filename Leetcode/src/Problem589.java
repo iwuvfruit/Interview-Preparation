@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,6 +8,19 @@ public class Problem589 {
 	public static void main(String[] args) {
 	
 }
+	public List<Integer> preorderWithRecursion(Node root) {
+		List<Integer> list = new ArrayList<>();
+		if(root == null) {
+			return list;
+		}
+		list.add(root.val);
+		for(Node node: root.children) {
+			
+			preorderWithRecursion(node);
+		}
+		return list;
+	}
+	
     public List<Integer> preorder(Node root) {
     	LinkedList<Integer> list = new  LinkedList<Integer>();
     	Stack<Node> stack = new Stack<>();
