@@ -1,3 +1,4 @@
+package easy;
 
 public class Problem344 {
 	public static void main(String[] args) {

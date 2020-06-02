@@ -1,3 +1,4 @@
+package easy;
 class TreeNode{
 	int val;
 	TreeNode left;

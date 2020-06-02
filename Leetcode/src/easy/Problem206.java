@@ -1,3 +1,4 @@
+package easy;
 /**
  Definition for singly-linked list.
  */
