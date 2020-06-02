@@ -23,10 +23,10 @@ public class Problem590 {
 	public static void main(String[] args) {
 		
 	}
-	
+	List<Integer> list = new ArrayList<>();
+
 	
 	public List<Integer> postorderWithRecursion(Node root){
-		List<Integer> list = new ArrayList<>();
 		if(root == null) {
 			return list;
 		}

@@ -5,11 +5,12 @@ import java.util.List;
 import java.util.Stack;
 
 public class Problem589 {
+	List<Integer> list = new ArrayList<>();
+
 	public static void main(String[] args) {
 	
 }
 	public List<Integer> preorderWithRecursion(Node root) {
-		List<Integer> list = new ArrayList<>();
 		if(root == null) {
 			return list;
 		}
