@@ -2,29 +2,31 @@ package easy;
 
 public class Problem21 {
 	public static void main(String[] args) {
-		I dont know this one  
 	}
-	public ListNode mergeTwoLists(ListNode node1, ListNode node2) {
-		ListNode temp = new ListNode(-1);
-		ListNode current = temp;
-		
-		while(node1.next != null && node2.next !=null) {
-			if(node1.val > node2.val) {
-				current.next = node1;
-				node1 = node1.next;
-			}else {
-				current.next = node2;
-				node2 = node2.next;
-			}
-		}
-		if(node1.next != null) {
-			current.next = node1;
-			node1 = node1.next;
-		}
-		if(node2.next != null) {
-			current.next = node2;
-			node2 = node2.next;
-		}
-		return temp.next;
-	}
+	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode temp = new ListNode(-1);
+        ListNode curr = temp;
+        
+        while(l1 != null && l2 != null){
+            if(l1.val >= l2.val) {
+                curr.next = l2;
+                l2 = l2.next;
+            }
+            else {
+                curr.next = l1;
+                l1 = l1.next;
+            }
+            curr = curr.next;
+            
+        }
+        if(l1 != null) {
+            curr.next = l1;
+            l1 = l1.next;
+        }
+        if(l2 != null) {
+            curr.next = l2;
+            l2 = l2.next;
+        }
+        return temp.next;
+    }
 }
