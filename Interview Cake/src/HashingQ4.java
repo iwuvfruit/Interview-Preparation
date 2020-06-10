@@ -1,32 +1,24 @@
-import java.util.Arrays;
 
 public class HashingQ4 {
 	public static void main(String[] args) {
-		int[] unsortedScores = {37, 89, 41, 65, 91, 53};
-		final int HIGHEST_POSSIBLE_SCORE = 100;
-		int[] x = sortScores(unsortedScores,HIGHEST_POSSIBLE_SCORE);
-		System.out.println(Arrays.toString(x));
+		
 	}
-			
-	public static int[] sortScores(int[] unorderedScores, int highestPossibleScore) {
-		
-		int[] scoreCounts = new int[highestPossibleScore+1];
-		for(int score: unorderedScores) {
-			scoreCounts[score]++;
+	
+	public static int[] sortScores(int[] unsortedScores, int highest) {
+		int[] count = new int[highest+1];
+		for(int i : unsortedScores) {
+			count[i]++;
 		}
-		
-		int[] sortedScores = new int[unorderedScores.length];
-		int currentSortedIndex = 0;
-		for(int score = highestPossibleScore; score >= 0; score--) {
-			int count = scoreCounts[score];
-			
-			for(int occurence = 0; occurence <count; occurence++) {
-				sortedScores[currentSortedIndex] = score;
-				currentSortedIndex++;
+		int index = 0;
+		int[] sorted = new int[unsortedScores.length];
+		for(int i = highest; i<=0; i--) {
+			int occurence = count[i];
+			for(int j = 0; j < occurence; j++) {
+				sorted[index] = i;
+				index++;
 			}
+			
 		}
-		return sortedScores;
-		
+		return sorted;
 	}
-
 }
