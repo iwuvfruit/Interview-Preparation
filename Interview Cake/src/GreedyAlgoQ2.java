@@ -24,7 +24,7 @@ public class GreedyAlgoQ2 {
 			lowestProductOf2 = Math.min(Math.min(lowestProductOf2, current * lowest), current * lowest);
 			
 			highest = Math.max(highest, current);
-			lowest = Math.min(lowest, current);
+			lowest = Math.min(lowest, current);	
 		}
 		return highestProductOf3;
 	}
